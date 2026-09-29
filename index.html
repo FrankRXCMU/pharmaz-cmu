@@ -366,15 +366,21 @@
         </div>
       </li>
       <li>
-        <div class="nav-item" id="nav-page2" onclick="switchPage('page2', 'แหล่งข้อมูล (Textbook & Guidelines)')">
+        <div class="nav-item" id="nav-page2" onclick="switchPage('page2', 'แหล่งข้อมูลทั่วไป (Textbook)')">
           <i data-lucide="book-open"></i>
-          <span>แหล่งข้อมูล (Textbook)</span>
+          <span>แหล่งข้อมูลทั่วไป (Textbook)</span>
         </div>
       </li>
       <li>
-        <div class="nav-item" id="nav-page3" onclick="switchPage('page3', 'เครื่องมือที่เกี่ยวข้องทางเภสัชกรรม')">
+        <div class="nav-item" id="nav-page3" onclick="switchPage('page3', 'แหล่งข้อมูลบริบาลทางเภสัชกรรม')">
           <i data-lucide="calculator"></i>
-          <span>เครื่องมือทางเภสัชกรรม (Tools)</span>
+          <span>แหล่งข้อมูลบริบาลเภสัชกรรม (Tools)</span>
+        </div>
+      </li>
+      <li>
+        <div class="nav-item" id="nav-page4" onclick="switchPage('page4', 'แห่งข้อมูลเภสัชอุตสาหการ')">
+          <i data-lucide="calculator"></i>
+          <span>แหล่งข้อมูลทางอุตสาหการ (Pharmaceutical science)</span>
         </div>
       </li>
     </ul>
@@ -500,7 +506,7 @@
         <div class="avatar" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
           <i data-lucide="book-marked" style="width: 38px; height: 38px;"></i>
         </div>
-        <h1 class="profile-title">แหล่งข้อมูลทางเภสัชกรรม</h1>
+        <h1 class="profile-title">แหล่งข้อมูลทั่วไป</h1>
         <p class="profile-desc">Textbook & Clinical Guidelines</p>
       </header>
 
@@ -516,40 +522,55 @@
           <i data-lucide="chevron-right" class="chevron"></i>
         </a>
 
-        <a href="https://login.usp.org/cas/login?service=https%3A%2F%2Fonline.uspnf.com%2Fcas%2Flogin" target="_blank" rel="noopener noreferrer" class="link-item theme-blue">
-          <div class="link-content">
-            <div class="icon-badge"><i data-lucide="book-a"></i></div>
-            <div class="link-texts">
-              <span class="link-title">USP Online</span>
-              <span class="link-sub">กรุณา login ด้วย CMU USP Account</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <a href="https://rxtoolsthailand.com/tools/clinical-guideline-browser" target="_blank" rel="noopener noreferrer" class="link-item theme-coral">
-          <div class="link-content">
-            <div class="icon-badge"><i data-lucide="clipboard-plus"></i></div>
-            <div class="link-texts">
-              <span class="link-title">Pharmacotherapy</span>
-              <span class="link-sub">แนวทางเวชปฏิบัติการรักษาโรค</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
         <a href="https://drive.google.com/file/d/1NymxuNAbdM2wdu7JA1pXJ_AwD_URdruu/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="link-item theme-amber">
           <div class="link-content">
             <div class="icon-badge"><i data-lucide="pill"></i></div>
             <div class="link-texts">
-              <span class="link-title">Pharmacology Summary</span>
+              <span class="link-title">Pharmacology Textbook</span>
               <span class="link-sub">สรุปยาแต่ละกลุ่ม กลไก และอาการไม่พึงประสงค์</span>
             </div>
           </div>
           <i data-lucide="chevron-right" class="chevron"></i>
         </a>
 
-        <a href="https://online.lexi.com/lco/action/home" target="_blank" rel="noopener noreferrer" class="link-item theme-green">
+      </main>
+    </section>
+
+        <!-- ================= หน้าที่ 3 ================= -->
+    <section id="page3" class="page">
+      <header class="profile-section">
+        <div class="avatar" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+          <i data-lucide="syringe" style="width: 38px; height: 38px;"></i>
+        </div>
+        <h1 class="profile-title">เครื่องมือทางบริบาลทางเภสัชกรรม</h1>
+        <p class="profile-desc">Pharmaceutical tools</p>
+      </header>
+
+      <main class="links-list">
+
+         <a href="https://rxtoolsthailand.com/tools/clinical-guideline-browser" target="_blank" rel="noopener noreferrer" class="link-item theme-coral">
+          <div class="link-content">
+            <div class="icon-badge"><i data-lucide="clipboard-plus"></i></div>
+            <div class="link-texts">
+              <span class="link-title">Guidelines</span>
+              <span class="link-sub">แนวทางเวชปฏิบัติการรักษาโรค</span>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="chevron"></i>
+        </a>
+
+        <a href="https://www.mdcalc.com/" target="_blank" rel="noopener noreferrer" class="link-item theme-rose">
+          <div class="link-content">
+            <div class="icon-badge"><i data-lucide="flask-conical"></i></div>
+            <div class="link-texts">
+              <span class="link-title">MDCalc</span>
+              <span class="link-sub">คำนวณผลแล็บทางปฏิบัติการ CrCl BMI ASCVD risk</span>
+            </div>
+          </div>
+          <i data-lucide="calculator" class="chevron"></i>
+        </a>
+
+         <a href="https://online.lexi.com/lco/action/home" target="_blank" rel="noopener noreferrer" class="link-item theme-green">
           <div class="link-content">
             <div class="icon-badge"><i data-lucide="globe"></i></div>
             <div class="link-texts">
@@ -570,30 +591,55 @@
           </div>
           <i data-lucide="chevron-right" class="chevron"></i>
         </a>
+
+    
       </main>
     </section>
 
-        <!-- ================= หน้าที่ 3 ================= -->
-    <section id="page3" class="page">
+     <!-- ================= หน้าที่ 4 ================= -->
+    <section id="page4" class="page">
       <header class="profile-section">
         <div class="avatar" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-          <i data-lucide="syringe" style="width: 38px; height: 38px;"></i>
+          <i data-lucide="tablets" style="width: 38px; height: 38px;"></i>
         </div>
-        <h1 class="profile-title">เครื่องมือทางเภสัชกรรม</h1>
-        <p class="profile-desc">Pharmaceutical tools</p>
+        <h1 class="profile-title">แหล่งข้อมูลเภสัชอุตสาหการ</h1>
+        <p class="profile-desc">Pharmaceutical Science</p>
       </header>
 
       <main class="links-list">
-        <a href="https://www.mdcalc.com/" target="_blank" rel="noopener noreferrer" class="link-item theme-rose">
+          <a href="https://login.usp.org/cas/login?service=https%3A%2F%2Fonline.uspnf.com%2Fcas%2Flogin" target="_blank" rel="noopener noreferrer" class="link-item theme-blue">
           <div class="link-content">
-            <div class="icon-badge"><i data-lucide="flask-conical"></i></div>
+            <div class="icon-badge"><i data-lucide="book-a"></i></div>
             <div class="link-texts">
-              <span class="link-title">MDCalc</span>
-              <span class="link-sub">คำนวณผลแล็บทางปฏิบัติการ CrCl BMI ASCVD risk</span>
+              <span class="link-title">USP Online</span>
+              <span class="link-sub">กรุณา login ด้วย CMU USP Account</span>
             </div>
           </div>
-          <i data-lucide="calculator" class="chevron"></i>
+          <i data-lucide="chevron-right" class="chevron"></i>
         </a>
+
+        <a href="https://www.ich.org/page/ich-guidelines" target="_blank" rel="noopener noreferrer" class="link-item theme-rose">
+          <div class="link-content">
+            <div class="icon-badge"><i data-lucide="book-open-text"></i></div>
+            <div class="link-texts">
+              <span class="link-title">ICH Guidelines</span>
+              <span class="link-sub">แนวทางปฏิบัติสากล the International Council for Harmonisation (ICH)</span>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="chevron"></i>
+        </a>
+
+        <a href="https://drug.fda.moph.go.th/information-service/guideline-/?fbclid=IwY2xjawUoPXNleHRuA2FlbQIxMABwZG9mBWJyaWQRMVJVRE9NREw5akt4QkRUMXVzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe_1E4wBiHFhXlYH4_a35fYodV0dzCoJQpGR0-3K9Lr2yMV4Gfjw0iKOjvKvw_aem_f6FsRn7yvuupeRD99Z9zCA" target="_blank" rel="noopener noreferrer" class="link-item theme-green">
+          <div class="link-content">
+            <div class="icon-badge"><i data-lucide="file-stack"></i></div>
+            <div class="link-texts">
+              <span class="link-title"> กองอาหารและยา Guidelines</span>
+              <span class="link-sub">รวมแนวทางปฏิบัติตามมาตรฐาน สำนักงานคณะกรรมการอาหารและยา</span>
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="chevron"></i>
+        </a>
+
 
     
       </main>

@@ -41,114 +41,75 @@
     }
 
     .modal-overlay {
-
-        display: none; /* เพิ่มบรรทัดนี้เพื่อซ่อน Pop-up ไว้ก่อน */
-
+        display: none; /* ซ่อน Pop-up ไว้ก่อน */
         position: fixed;
-
         top: 0;
-
         left: 0;
-
         width: 100%;
-
         height: 100%;
-
         background-color: rgba(0, 0, 0, 0.7);
-
-        /* display: flex; เอาออก หรือซ่อนไว้ เพราะเราจะใช้ JS ควบคุมตอนกดปุ่ม */
-
         justify-content: center;
-
         align-items: center;
-
         z-index: 1000;
-
     }
 
+    /* จัดรูปแบบกล่อง Pop-up */
+    .modal-box {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        text-align: center;
+        width: 300px;
+        position: relative;
+    }
 
-        /* จัดรูปแบบกล่อง Pop-up */
+    .modal-box h2 {
+        margin-top: 15px;
+        font-size: 1.3em;
+    }
 
-        .modal-box {
+    .modal-box input[type="password"] {
+        width: 90%;
+        padding: 10px;
+        margin: 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+    }
 
-            background-color: white;
+    .modal-box button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+    }
 
-            padding: 30px;
+    .modal-box button:hover {
+        background-color: #0056b3;
+    }
 
-            border-radius: 8px;
+    /* ซ่อนเนื้อหาหลักไว้ก่อนจนกว่าจะใส่รหัสถูก */
+    .main-content {
+        display: none;
+        padding: 20px;
+    }
 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-
-            text-align: center;
-
-            width: 300px;
-
-        }
-
-
-        .modal-box h2 {
-
-            margin-top: 0;
-
-            font-size: 1.5em;
-
-        }
-
-
-        .modal-box input[type="password"] {
-
-            width: 90%;
-
-            padding: 10px;
-
-            margin: 15px 0;
-
-            border: 1px solid #ccc;
-
-            border-radius: 4px;
-
-            font-size: 1em;
-
-        }
-
-
-        .modal-box button {
-
-            background-color: #007BFF;
-
-            color: white;
-
-            border: none;
-
-            padding: 10px 20px;
-
-            border-radius: 4px;
-
-            cursor: pointer;
-
-            font-size: 1em;
-
-            width: 100%;
-
-        }
-
-
-        .modal-box button:hover {
-
-            background-color: #0056b3;
-
-        }
-
-
-        /* ซ่อนเนื้อหาหลักไว้ก่อนจนกว่าจะใส่รหัสถูก */
-
-        .main-content {
-
-            display: none;
-
-            padding: 20px;
-
-        }
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #aaa;
+    }
+    .close-btn:hover {
+        color: #000;
+    }
 
     * {
       box-sizing: border-box;
@@ -243,7 +204,7 @@
       gap: 10px;
     }
 
-    .close-btn {
+    .close-btn-sidebar {
       background: none;
       border: none;
       color: var(--text-muted);
@@ -449,7 +410,6 @@
       margin-top: 30px;
       border-radius: 50%;
       font-size: 1rem;
-  
       color: #FF303C;
     }
   </style>
@@ -475,7 +435,7 @@
         <i data-lucide="layers" style="color: #6366F1;"></i>
         <span>หมวดหมู่</span>
       </div>
-      <button class="close-btn" onclick="toggleSidebar()" aria-label="Close menu">
+      <button class="close-btn-sidebar" onclick="toggleSidebar()" aria-label="Close menu">
         <i data-lucide="x" style="width: 22px; height: 22px;"></i>
       </button>
     </div>
@@ -686,7 +646,6 @@
           <i data-lucide="chevron-right" class="chevron"></i>
         </a>
 
-
       </main>
     </section>
 
@@ -839,8 +798,6 @@
           </div>
           <i data-lucide="file-text" class="chevron"></i>
         </a>
-
-      
 
       </main>
     </section>
@@ -1001,199 +958,18 @@
       </main> 
     </section>
 
-    <!-- ================= หน้าที่ 1 ================= -->
-    <section id="page1" class="page active">
-      <header class="profile-section">
-        <div class="avatar">
-          <i data-lucide="graduation-cap" style="width: 38px; height: 38px;"></i>
-        </div>
-        <h1 class="profile-title">คลังวิดีโอเรียนย้อนหลัง</h1>
-        <p class="profile-desc">สำหรับนักศึกษาเภสัชศาสตร์ชั้นปีที่ 4 มหาวิทยาลัยเชียงใหม่ เท่านั้น</p>
-      </header>
-
-      <main class="links-list">
-
-        <a href="https://youtube.com/playlist?list=PLYbwkxbUJyjM&si=ehxRQDGwBrXRTj94" target="_blank" rel="noopener noreferrer" class="link-item theme-green">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="heart-pulse"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Therapy</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <a href="https://m.youtube.com/playlist?list=PLTSH2-N_bo-L1V4k1Dl70TavJisgvgxQH" target="_blank" rel="noopener noreferrer" class="link-item theme-navy">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="dna"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">BioTechnology</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-         <a href="https://m.youtube.com/playlist?list=PLTSH2-N_bo-L2mmI_C--J-8c8szTHLsU6&ra=m" target="_blank" rel="noopener noreferrer" class="link-item theme-rose">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="flask-conical"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Medicinal Chemistry</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <div style="max-width: 100%; padding: 0 16px; margin-top: 10px;">
-           <p style="text-align: center; color: #4b5563; font-size: 14px; margin: 0;">Pharamceutical Science</p>
-           <hr style="border: 0; height: 3px; background: linear-gradient(to right, transparent, #8b5cf6, #ec4899, transparent); margin: 5px 0;">
-        </div>
-
-        <a href="https://youtube.com/playlist?list=PLKu12CLMNmII&si=hOiHVt2E1TLUTgZB" target="_blank" rel="noopener noreferrer" class="link-item theme-blue">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="search"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Research</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <!-- 3. Epidemiology -->
-        <a href="https://youtube.com/playlist?list=PLDhrrjhB2xGc&si=21BDcuIrS8ZROyOv" target="_blank" rel="noopener noreferrer" class="link-item theme-amber">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="activity"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Epidemiology</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <!-- 4. Pharm Law -->
-        <a href="https://youtube.com/playlist?list=PLXPRaEql3Ouk&si=UBJlSCXh6chzCrA2" target="_blank" rel="noopener noreferrer" class="link-item theme-purple">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="scale"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Pharm Law</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <!-- 7. Analytical Development -->
-        <a href="https://youtube.com/playlist?list=PLD_8KUNvzHc4&si=a19utgfOeybjPUdB" target="_blank" rel="noopener noreferrer" class="link-item theme-rose">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="chart-spline"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Analytical Development</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <div style="max-width: 100%; padding: 0 16px; margin-top: 10px;">
-           <p style="text-align: center; color: #4b5563; font-size: 14px; margin: 0;">Pharamceutical Care</p>
-           <hr style="border: 0; height: 3px; background: linear-gradient(to right, transparent, #090979, #00D4FF, transparent); margin: 5px ;0;">
-        </div>
-
-        <a href="https://www.youtube.com/playlist?list=PLdJZKhXFTx-A" target="_blank" rel="noopener noreferrer" class="link-item theme-purple">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="heart-handshake"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Health system</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <a href="https://www.youtube.com/playlist?list=PLSW2xy4sySsE&si=MN708LoINJBkjFTV" target="_blank" rel="noopener noreferrer" class="link-item theme-teal">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="circle-dollar-sign"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Pharmaceutical Economics</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <a href="https://www.youtube.com/playlist?list=PLfn5iRjEkjdE8XCTqAqhdgrb--0dPkxUQ" target="_blank" rel="noopener noreferrer" class="link-item theme-green">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="file-chart-column-increasing"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Data for Decision (D4D)</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-        <a href="https://www.youtube.com/playlist?list=PLfjmDPJNBA8w&si=PoK1Bp_Z8Ybjd0kU" target="_blank" rel="noopener noreferrer" class="link-item theme-blue">
-          <div class="link-content">
-            <div class="icon-badge">
-              <i data-lucide="flask-conical"></i>
-            </div>
-            <div class="link-texts">
-              <span class="link-title">Extemporaneous preparation</span>
-              <span class="link-sub">YouTube Playlist</span>
-            </div>
-          </div>
-          <i data-lucide="chevron-right" class="chevron"></i>
-        </a>
-
-
-      </main>
-    </section>
-
-     <!-- ส่วนของ Pop-up -->
-
+    <!-- ส่วนของ Pop-up -->
     <div id="passwordModal" class="modal-overlay">
-
         <div class="modal-box">
           <div class="avatar" style="background: linear-gradient(135deg, #A1FCFF 0%, #57C785 100%);">
           <i data-lucide="user-round-group" style="width: 38px; height: 38px;"></i>
         </div>
-
             <span class="close-btn" onclick="closeModal()">&times;</span>
-
             <h2> กรุณาใส่รหัส ชมรม Ben10NISon</h2>
-
             <p>กรุณายืนยันตัวตนก่อนเข้าใช้งาน</p>
-
             <input type="password" id="passwordInput" placeholder="รหัสผ่าน เช่น 123*">
-
             <button class="submit-btn" onclick="checkPassword()">เข้าสู่ระบบ</button>
-
         </div>
-
     </div>
 
     <!-- ================= หน้าที่ 5 ================= -->
@@ -1208,8 +984,6 @@
 
       <main class="knowledge column">
         
-      
-
       </main>
     </section>
 
@@ -1253,82 +1027,35 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-
-
+    // ฟังก์ชันเปิด Pop-up
     function openModal() {
+        document.getElementById("passwordModal").style.display = "flex";
+    }
 
-            document.getElementById("passwordModal").style.display = "flex";
+    // ฟังก์ชันปิด Pop-up
+    function closeModal() {
+        document.getElementById("passwordModal").style.display = "none";
+        document.getElementById("passwordInput").value = ""; // ล้างรหัสผ่านที่ค้างอยู่
+    }
 
+    // ฟังก์ชันเช็ครหัสผ่าน
+    function checkPassword() {
+        const correctPassword = "1"; // เปลี่ยนรหัสผ่านตรงนี้
+        const input = document.getElementById("passwordInput").value;
+
+        if (input === correctPassword) {
+            // ถ้ารหัสถูก
+            closeModal(); // ปิด Pop-up
+            
+            // ใช้ฟังก์ชัน switchPage เพื่อเปลี่ยนไป page 5
+            switchPage('page5', 'จองสนามเทนนิส');
+            
+        } else {
+            // ถ้ารหัสผิด
+            alert("รหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง");
+            document.getElementById("passwordInput").value = ""; 
         }
-
-
-        // ฟังก์ชันปิด Pop-up
-
-        function closeModal() {
-
-            document.getElementById("passwordModal").style.display = "none";
-
-            document.getElementById("passwordInput").value = ""; // ล้างรหัสผ่านที่ค้างอยู่
-
-        }
-
-
-        // ฟังก์ชันเช็ครหัสผ่าน
-
-        function openModal() {
-
-            // เมื่อกดปุ่ม ค่อยแสดง pop-up ขึ้นมา
-
-            document.getElementById("passwordModal").style.display = "flex";
-
-        }
-
-
-        // ฟังก์ชันปิด Pop-up
-
-        function closeModal() {
-
-            document.getElementById("passwordModal").style.display = "none";
-
-            document.getElementById("passwordInput").value = ""; // ล้างรหัสผ่านที่ค้างอยู่
-
-        }
-
-
-        // ฟังก์ชันเช็ครหัสผ่าน
-
-        function checkPassword() {
-
-            const correctPassword = "1"; // เปลี่ยนรหัสผ่านตรงนี้
-
-            const input = document.getElementById("passwordInput").value;
-
-
-            if (input === correctPassword) {
-
-                // ถ้ารหัสถูก
-
-                closeModal(); // ปิด Pop-up
-
-
-                // *** ใช้ฟังก์ชัน switchPage ที่มีอยู่แล้วเพื่อเปลี่ยนไป page 5 อย่างสมบูรณ์ ***
-
-                switchPage('page5', 'จองสนามเทนนิส');
-
-                
-
-            } else {
-
-                // ถ้ารหัสผิด
-
-                alert("รหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง");
-
-                document.getElementById("passwordInput").value = ""; 
-
-            }
-
-        }
-
+    }
   </script>
 </body>
 </html>
